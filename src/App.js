@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
+import Gamepage from "./Components/Gamepage";
 
 class App extends Component {
   render() {
-    return <div className="App" />;
+    return (
+      <div>
+        <Gamepage />
+      </div>
+    );
   }
 }
 
