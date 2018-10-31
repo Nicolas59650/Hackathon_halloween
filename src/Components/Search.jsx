@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Gamepage from "./Gamepage";
 import axios from "axios";
 
 let maTournee = [
@@ -49,7 +50,11 @@ class Search extends Component {
   }
 
   render() {
-    return <div>{JSON.stringify(this.state.result)}</div>;
+    return (
+      <div>
+        <Gamepage data={this.state.result} />
+      </div>
+    );
   }
 }
 

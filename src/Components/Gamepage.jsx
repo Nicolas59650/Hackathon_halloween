@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import "./Gamepage.css";
 
 class Gamepage extends Component {
   constructor(props) {
@@ -9,7 +12,9 @@ class Gamepage extends Component {
       city: "Wild+code+school"
     };
     this.goRight = this.goRight.bind(this);
-    this.goRightUp = this.goRightUp.bind(this);
+    this.goLeft = this.goLeft.bind(this);
+    this.goUp = this.goUp.bind(this);
+    this.goDown = this.goDown.bind(this);
   }
 
   goRight() {
@@ -28,139 +33,75 @@ class Gamepage extends Component {
     this.setState({ latitude: this.state.latitude - 0.002 });
   }
 
-  goRightUp() {
-    this.setState({
-      longitude: this.state.longitude + 0.002,
-      latitude: this.state.latitude + 0.002
-    });
-  }
-
-  goLeftUp() {
-    this.setState({
-      longitude: this.state.longitude - 0.002,
-      latitude: this.state.latitude + 0.002
-    });
-  }
-
-  goRightDown() {
-    this.setState({
-      longitude: this.state.longitude + 0.002,
-      latitude: this.state.latitude - 0.002
-    });
-  }
-
-  goLeftDown() {
-    this.setState({
-      longitude: this.state.longitude - 0.002,
-      latitude: this.state.latitude - 0.002
-    });
-  }
-
   render() {
     let base =
       "https://www.google.com/maps/embed/v1/place?key=AIzaSyCEBcrR5PVaZRvVdEc7tIDnv5BdzNoB7Jg&q=";
+    console.log(JSON.stringify(this.props.data));
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-7">
-            <iframe
-              title="test_map"
-              width="800"
-              height="500"
-              frameborder="0"
-              src={
-                base +
-                this.state.city +
-                "&center=" +
-                this.state.latitude +
-                "," +
-                this.state.longitude
-              }
-              allowfullscreen
-            />
+      <div>
+        <Header />
+        <div className="gamepage-bg">
+          <div className="container-fluid pt-5">
+            <div className="row">
+              <div className="embed-responsive embed-responsive-16by9 col-lg-7 col-sm-12">
+                <iframe
+                  className="embed-responsive-item"
+                  title="test_map"
+                  frameborder="0"
+                  src={
+                    base +
+                    this.state.city +
+                    "&center=" +
+                    this.state.latitude +
+                    "," +
+                    this.state.longitude
+                  }
+                  allowfullscreen
+                />
+              </div>
+              <div className="col-lg-4 col-sm-12">
+                <div className="container buttons">
+                  <button
+                    className="offset-1 col-3 button-gamepage"
+                    onClick={() => {
+                      this.goUp();
+                    }}
+                  >
+                    Up
+                  </button>
 
-            <br />
-            <div className="container buttons">
-              <div className="row">
-                <button
-                  className="col-4"
-                  onClick={() => {
-                    this.goLeftUp();
-                  }}
-                >
-                  Left Up
-                </button>
+                  <button
+                    className="col-3 button-gamepage"
+                    onClick={() => {
+                      this.goLeft();
+                    }}
+                  >
+                    L
+                  </button>
 
-                <button
-                  className="col-4"
-                  onClick={() => {
-                    this.goUp();
-                  }}
-                >
-                  Up
-                </button>
+                  <button
+                    className="offset-6 col-3 button-gamepage"
+                    onClick={() => {
+                      this.goRight();
+                    }}
+                  >
+                    R
+                  </button>
 
-                <button
-                  className="col-4"
-                  onClick={() => {
-                    this.goRightUp();
-                  }}
-                >
-                  Right Up
-                </button>
-
-                <button
-                  className="col-4"
-                  onClick={() => {
-                    this.goLeft();
-                  }}
-                >
-                  Left
-                </button>
-
-                <button
-                  className="col-4 offset-4"
-                  onClick={() => {
-                    this.goRight();
-                  }}
-                >
-                  Right
-                </button>
-
-                <button
-                  className="col-4"
-                  onClick={() => {
-                    this.goLeftDown();
-                  }}
-                >
-                  Left Down
-                </button>
-
-                <button
-                  className="col-4"
-                  onClick={() => {
-                    this.goDown();
-                  }}
-                >
-                  Down
-                </button>
-
-                <button
-                  className="col-4"
-                  onClick={() => {
-                    this.goRightDown();
-                  }}
-                >
-                  Right Down
-                </button>
+                  <button
+                    className="offset-1 col-3 button-gamepage"
+                    onClick={() => {
+                      this.goDown();
+                    }}
+                  >
+                    D
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div className="col-5">
-            <h2>Longitude : {this.state.longitude}</h2>
-            <h2>Latitude : {this.state.latitude}</h2>
-          </div>
         </div>
+        <Footer />
       </div>
     );
   }
