@@ -3,27 +3,13 @@
   src: url("../assets/fonts/youmurderer-bb.regular.otf");
 }
 
-#navigation {
-  color: white;
-  font-family: "youmurderer";
-  text-shadow: 1px 1px orange;
-  font-size: 36px;
-}
-
-.navbar {
+#nav-tool {
   background-color: #070802 !important;
 }
 
-.link-nav {
-  text-decoration: none;
-  color: white;
+.navigation {
+  color: white !important;
   font-family: "youmurderer";
   text-shadow: 1px 1px orange;
   font-size: 36px;
-  margin-left: 40%;
-}
-
-.link-nav:hover {
-  text-decoration: none;
-  color: white;
 }

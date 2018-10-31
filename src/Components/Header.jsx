@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Header.css";
-//import { Link } from "react-router-dom";
 import {
   Collapse,
   Navbar,
@@ -24,16 +23,22 @@ class Header extends Component {
 
   render() {
     return (
-      <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/Homepage">Teeth or Treat !</NavbarBrand>
+      <Navbar id="nav-tool" color="dark" dark expand="md">
+        <NavbarBrand href="/" className="mt-2 navigation">
+          Teeth or Treat !
+        </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-auto" navbar>
+          <Nav className="ml-5" navbar>
             <NavItem>
-              <NavLink href="/Gamepage">Jeu</NavLink>
+              <NavLink className="mt-2 ml-5 navigation" href="/Gamepage">
+                Jeu
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Candydex">Bonbondex</NavLink>
+              <NavLink className="mt-2 ml-5 navigation" href="/Candydex">
+                Bonbondex
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>
