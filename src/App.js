@@ -5,6 +5,7 @@ import Footer from "./Components/Footer";
 import Candydex from "./Components/Candydex";
 import Profile from "./Components/Profile";
 import Gamepage from "./Components/Gamepage";
+import Search from "./Components/Search";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path="/Profile" component={Profile} />
           </Switch>
         </BrowserRouter>
+        <Search />
         <Footer />
       </div>
     );

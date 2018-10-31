@@ -1,24 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import axios from "axios";
 
 let maTournee = [
   {
-    name: "Le Switch",
-    number: "153",
-    label: "Rue+Colbert",
-    postcode: "59800+Lille"
+    name: "Nico",
+    number: "11",
+    label: "rue+colombines",
+    postcode: "59660"
   },
   {
-    name: " IBM",
-    number: "6",
-    label: "Avenue+des+Saules",
-    postcode: "59800+Lille"
+    name: "Nico",
+    number: "11",
+    label: "rue+colombines",
+    postcode: "59660"
   },
   {
-    name: "So Good",
-    number: "163",
-    label: "Avenue+de+bretagne",
-    postcode: "59800+Lille"
+    name: "Nico",
+    number: "11",
+    label: "rue+colombines",
+    postcode: "59660"
   }
 ];
 
@@ -32,16 +32,24 @@ class Search extends Component {
   }
 
   componentDidMount() {
-    let api = axios;  
-    let urlBase = "https://api-adresse.data.gouv.fr/search/?q="
-    this.state.address.map(id=>{
-        api.get(urlBase + id.number + id.label + id.postcode)
-        .then(res => {
-
-        })
+    let api = axios;
+    let urlBase = "https://api-adresse.data.gouv.fr/search/?q=";
+    let coordinates = [];
+    this.state.address.map(id => {
+      api
+        .get(urlBase + id.number + id.label + "&postcode=" + id.postcode)
+        .then(response => {
+          coordinates.push({
+            latitude: response.data.features[0].geometry.coordinates[0],
+            longitude: response.data.features[0].geometry.coordinates[1]
+          });
+          this.setState({ result: coordinates });
+        });
+    });
   }
+
   render() {
-    return <div />;
+    return <div>{JSON.stringify(this.state.result)}</div>;
   }
 }
 
