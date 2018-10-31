@@ -1,5 +1,5 @@
 footer {
-  background-color: black !important;
+  background-color: #070802 !important;
 }
 
 .heart {
@@ -13,12 +13,4 @@ footer {
 
 .text-white {
   color: rgb(99, 21, 122);
-}
-ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-li {
-  margin-bottom: 15px;
 }
