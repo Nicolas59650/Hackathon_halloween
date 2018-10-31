@@ -23,6 +23,7 @@ const Footer = () => {
               className="wild"
               href="https://wildcodeschool.fr/lille/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Made with <span className="heart">♥</span> by Wild Code School
             </a>
