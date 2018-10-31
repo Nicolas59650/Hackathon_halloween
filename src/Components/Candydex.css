@@ -3,7 +3,7 @@
   src: url("../assets/fonts/youmurderer-bb.regular.otf");
 }
 
-.App-Body {
+.candybody {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(../assets/img/corbeau.jpg) no-repeat center fixed;
   -webkit-background-size: cover;
