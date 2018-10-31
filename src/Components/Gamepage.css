@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "youmurderer";
+  src: url("../assets/fonts/youmurderer-bb.regular.otf");
+}
+
 .gamepage-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(../assets/img/corbeau.jpg) no-repeat center fixed;
@@ -42,4 +47,9 @@
     padding-top: 10px;
     padding-left: 65px;
   }
+}
+
+.messageh1 {
+  color: white;
+  font-family: "youmurderer";
 }

@@ -3,12 +3,15 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "./Gamepage.css";
 
+let goalAchieved = 0;
+let messageh1 = "Et si on commençait à bouger ? Explorons !!";
+
 class Gamepage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      latitude: 50.6331,
-      longitude: 3.0188,
+      latitude: 50.6331, //50.61  INITIAL VALUE 50.6331
+      longitude: 3.0188, //3.06   INITIAL VALUE 3.0188
       city: "Wild+code+school"
     };
     this.goRight = this.goRight.bind(this);
@@ -18,25 +21,84 @@ class Gamepage extends Component {
   }
 
   goRight() {
-    this.setState({ longitude: this.state.longitude + 0.002 });
+    let longTemp = JSON.parse(this.props.result)[0].longitude;
+    if (
+      this.state.longitude + 0.02 > longTemp - 0.02 &&
+      this.state.longitude + 0.02 < longTemp + 0.02
+    ) {
+      messageh1 = "Stop !! Maintenant tu peux essayer nord ou sud";
+      goalAchieved++;
+    } else {
+      if (longTemp > this.state.longitude) {
+        messageh1 = "Continue vers l'est !";
+      } else {
+        messageh1 = "Ouuups, mauvaise direction ! Plutôt vers l'ouest ?";
+      }
+    }
+    this.setState({ longitude: this.state.longitude + 0.02 });
   }
 
   goLeft() {
-    this.setState({ longitude: this.state.longitude - 0.002 });
+    let longTemp = JSON.parse(this.props.result)[0].longitude;
+    if (
+      this.state.longitude - 0.02 > longTemp - 0.02 &&
+      this.state.longitude - 0.02 < longTemp + 0.02
+    ) {
+      messageh1 = "Stop !! Maintenant tu peux essayer nord ou sud";
+      goalAchieved++;
+    } else {
+      if (longTemp < this.state.longitude) {
+        messageh1 = "Continue vers l'ouest !";
+      } else {
+        messageh1 = "Ouuups, mauvaise direction ! Plutôt vers l'est ?";
+      }
+    }
+    this.setState({ longitude: this.state.longitude - 0.02 });
   }
 
   goUp() {
-    this.setState({ latitude: this.state.latitude + 0.002 });
+    let latTemp = JSON.parse(this.props.result)[0].latitude;
+    if (
+      this.state.latitude + 0.02 > latTemp - 0.02 &&
+      this.state.latitude + 0.02 < latTemp + 0.02
+    ) {
+      messageh1 = "Stop !! Maintenant tu peux essayer ouest ou est";
+      goalAchieved++;
+    } else {
+      if (latTemp > this.state.latitude) {
+        messageh1 = "Continue vers le nord !";
+      } else {
+        messageh1 = "Ouuups, mauvaise direction ! Plutôt vers le sud ?";
+      }
+    }
+    this.setState({ latitude: this.state.latitude + 0.02 });
   }
 
   goDown() {
-    this.setState({ latitude: this.state.latitude - 0.002 });
+    let latTemp = JSON.parse(this.props.result)[0].latitude;
+    if (
+      this.state.latitude - 0.02 > latTemp - 0.02 &&
+      this.state.latitude - 0.02 < latTemp + 0.02
+    ) {
+      messageh1 = "Stop !! Maintenant tu peux essayer ouest ou est";
+      goalAchieved++;
+    } else {
+      if (latTemp < this.state.latitude) {
+        messageh1 = "Continue vers le sud !";
+      } else {
+        messageh1 = "Ouuups, mauvaise direction ! Plutôt vers le nord ?";
+      }
+    }
+    this.setState({ latitude: this.state.latitude - 0.02 });
   }
 
   render() {
     let base =
       "https://www.google.com/maps/embed/v1/place?key=AIzaSyCEBcrR5PVaZRvVdEc7tIDnv5BdzNoB7Jg&q=";
-    console.log(JSON.stringify(this.props.data));
+    let results = this.props.result;
+    if (goalAchieved === 2) {
+      messageh1 = "You obtained a candy !!";
+    }
     return (
       <div>
         <Header />
@@ -61,6 +123,7 @@ class Gamepage extends Component {
               </div>
               <div className="col-lg-4 col-sm-12">
                 <div className="container buttons">
+                  <h1 className="messageh1 text-center">{messageh1}</h1>
                   <button
                     className="offset-1 col-3 button-gamepage"
                     onClick={() => {
@@ -167,4 +230,9 @@ allowfullscreen
         this.setState({ nbSweets: calculatedSweets });
       }
       
-          this.sweetGenerator = this.sweetGenerator.bind(this);*/
+          this.sweetGenerator = this.sweetGenerator.bind(this);
+        <h1>{results}</h1>
+        <h1>Long: {this.state.longitude}</h1>
+        <h1>Lat: {this.state.latitude}</h1>
+
+          */
