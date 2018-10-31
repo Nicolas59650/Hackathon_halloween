@@ -7,9 +7,22 @@
   color: white;
   font-family: "youmurderer";
   text-shadow: 1px 1px orange;
-  font-size: 32px;
+  font-size: 36px;
 }
 
 .navbar {
   background-color: #070802 !important;
+}
+
+.link-nav {
+  text-decoration: none;
+  color: white;
+  font-family: "youmurderer";
+  text-shadow: 1px 1px orange;
+  font-size: 36px;
+}
+
+.link-nav:hover {
+  text-decoration: none;
+  color: white;
 }

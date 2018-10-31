@@ -103,9 +103,22 @@ class Gamepage extends Component {
       <div>
         <Header />
         <div className="gamepage-bg">
+          <div className="introduction">
+            <p id="text-introduction" className="pt-4 mb-0 text-center">
+              Sois curieux et cherche les bonbons sur la carte a l' aide des
+              boutons directionnels
+            </p>
+            <div className="text-center pt-0 mt-0">
+              <img
+                className="citrouille"
+                src="/img/citrouille.png"
+                alt="citrouille"
+              />
+            </div>
+          </div>
           <div className="container-fluid pt-5">
             <div className="row">
-              <div className="embed-responsive embed-responsive-16by9 col-lg-7 col-sm-12">
+              <div className="embed-responsive embed-responsive-16by9 col-lg-7 col-sm-12 ml-lg-3 mb-5">
                 <iframe
                   className="embed-responsive-item"
                   title="test_map"
