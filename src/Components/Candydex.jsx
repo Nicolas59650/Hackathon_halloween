@@ -36,7 +36,7 @@ class Candydex extends Component {
   render() {
     //JSON.stringify(this.state.candies)
     return (
-      <div className="App-Body">
+      <div className="container-fluid text-center candybody">
         {this.state.candies.map(candy => {
           return (
             <div>
