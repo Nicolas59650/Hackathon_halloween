@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import "./Gamepage.css";
 
 let goalAchieved = 0;
-let messageh1 = "Et si on commençait à bouger ? Explorons !!";
+let messageh1 = "Et si on commencait a bouger ? Explorons !!";
 
 class Gamepage extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Gamepage extends Component {
       if (longTemp > this.state.longitude) {
         messageh1 = "Continue vers l'est !";
       } else {
-        messageh1 = "Ouuups, mauvaise direction ! Plutôt vers l'ouest ?";
+        messageh1 = "Ouuups, mauvaise direction ! Plutot vers l'ouest ?";
       }
     }
     this.setState({ longitude: this.state.longitude + 0.02 });
@@ -50,7 +50,7 @@ class Gamepage extends Component {
       if (longTemp < this.state.longitude) {
         messageh1 = "Continue vers l'ouest !";
       } else {
-        messageh1 = "Ouuups, mauvaise direction ! Plutôt vers l'est ?";
+        messageh1 = "Ouuups, mauvaise direction ! Plutot vers l'est ?";
       }
     }
     this.setState({ longitude: this.state.longitude - 0.02 });
@@ -68,7 +68,7 @@ class Gamepage extends Component {
       if (latTemp > this.state.latitude) {
         messageh1 = "Continue vers le nord !";
       } else {
-        messageh1 = "Ouuups, mauvaise direction ! Plutôt vers le sud ?";
+        messageh1 = "Ouuups, mauvaise direction ! Plutot vers le sud ?";
       }
     }
     this.setState({ latitude: this.state.latitude + 0.02 });
@@ -86,7 +86,7 @@ class Gamepage extends Component {
       if (latTemp < this.state.latitude) {
         messageh1 = "Continue vers le sud !";
       } else {
-        messageh1 = "Ouuups, mauvaise direction ! Plutôt vers le nord ?";
+        messageh1 = "Ouuups, mauvaise direction ! Plutot vers le nord ?";
       }
     }
     this.setState({ latitude: this.state.latitude - 0.02 });
@@ -95,9 +95,8 @@ class Gamepage extends Component {
   render() {
     let base =
       "https://www.google.com/maps/embed/v1/place?key=AIzaSyCEBcrR5PVaZRvVdEc7tIDnv5BdzNoB7Jg&q=";
-    let results = this.props.result;
     if (goalAchieved === 2) {
-      messageh1 = "You obtained a candy !!";
+      messageh1 = "A toi le bonbon !!";
     }
     return (
       <div>
@@ -136,42 +135,49 @@ class Gamepage extends Component {
               </div>
               <div className="col-lg-4 col-sm-12">
                 <div className="container buttons">
-                  <h1 className="messageh1 text-center">{messageh1}</h1>
-                  <button
-                    className="offset-1 col-3 button-gamepage"
-                    onClick={() => {
-                      this.goUp();
-                    }}
-                  >
-                    Up
-                  </button>
-
-                  <button
-                    className="col-3 button-gamepage"
-                    onClick={() => {
-                      this.goLeft();
-                    }}
-                  >
-                    L
-                  </button>
-
-                  <button
-                    className="offset-6 col-3 button-gamepage"
-                    onClick={() => {
-                      this.goRight();
-                    }}
-                  >
-                    R
-                  </button>
-
-                  <button
-                    className="offset-1 col-3 button-gamepage"
-                    onClick={() => {
-                      this.goDown();
-                    }}
-                  >
-                    D
-                  </button>
+                  <h1 className="messageh1 text-center pr-4">{messageh1}</h1>
+                  <div className="row">
+                    <div className="offset-4 col-3">
+                      <button
+                        className="button-gamepage"
+                        onClick={() => {
+                          this.goUp();
+                        }}
+                      >
+                        Nord
+                      </button>
+                    </div>
+                    <div className="offset-3 col-3">
+                      <button
+                        className="button-gamepage button-left-gamepage"
+                        onClick={() => {
+                          this.goLeft();
+                        }}
+                      >
+                        Ouest
+                      </button>
+                    </div>
+                    <div className="col-3">
+                      <button
+                        className="button-right-gamepage"
+                        onClick={() => {
+                          this.goRight();
+                        }}
+                      >
+                        Est
+                      </button>
+                    </div>
+                    <div className="offset-4 col-3">
+                      <button
+                        className="button-gamepage"
+                        onClick={() => {
+                          this.goDown();
+                        }}
+                      >
+                        Sud
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
