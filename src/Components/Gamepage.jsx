@@ -12,7 +12,9 @@ class Gamepage extends Component {
       city: "Wild+code+school"
     };
     this.goRight = this.goRight.bind(this);
-    this.goRightUp = this.goRightUp.bind(this);
+    this.goLeft = this.goLeft.bind(this);
+    this.goUp = this.goUp.bind(this);
+    this.goDown = this.goDown.bind(this);
   }
 
   goRight() {
@@ -29,34 +31,6 @@ class Gamepage extends Component {
 
   goDown() {
     this.setState({ latitude: this.state.latitude - 0.002 });
-  }
-
-  goRightUp() {
-    this.setState({
-      longitude: this.state.longitude + 0.002,
-      latitude: this.state.latitude + 0.002
-    });
-  }
-
-  goLeftUp() {
-    this.setState({
-      longitude: this.state.longitude - 0.002,
-      latitude: this.state.latitude + 0.002
-    });
-  }
-
-  goRightDown() {
-    this.setState({
-      longitude: this.state.longitude + 0.002,
-      latitude: this.state.latitude - 0.002
-    });
-  }
-
-  goLeftDown() {
-    this.setState({
-      longitude: this.state.longitude - 0.002,
-      latitude: this.state.latitude - 0.002
-    });
   }
 
   render() {
@@ -89,28 +63,10 @@ class Gamepage extends Component {
                   <button
                     className="offset-1 col-3 button-gamepage"
                     onClick={() => {
-                      this.goLeftUp();
-                    }}
-                  >
-                    LU
-                  </button>
-
-                  <button
-                    className="offset-1 col-3 button-gamepage"
-                    onClick={() => {
                       this.goUp();
                     }}
                   >
                     Up
-                  </button>
-
-                  <button
-                    className="offset-1 col-3 button-gamepage"
-                    onClick={() => {
-                      this.goRightUp();
-                    }}
-                  >
-                    RU
                   </button>
 
                   <button
@@ -134,28 +90,10 @@ class Gamepage extends Component {
                   <button
                     className="offset-1 col-3 button-gamepage"
                     onClick={() => {
-                      this.goLeftDown();
-                    }}
-                  >
-                    LD
-                  </button>
-
-                  <button
-                    className="offset-1 col-3 button-gamepage"
-                    onClick={() => {
                       this.goDown();
                     }}
                   >
                     D
-                  </button>
-
-                  <button
-                    className="offset-1 col-3 button-gamepage"
-                    onClick={() => {
-                      this.goRightDown();
-                    }}
-                  >
-                    RD
                   </button>
                 </div>
               </div>
