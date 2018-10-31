@@ -18,8 +18,14 @@ const Footer = () => {
           <li className="col-xs-12 col-sm-2 text-white mb-2">
             Mention Légales
           </li>
-          <li className="col-xs-12 col-sm-2 text-white madeWithLove">
-            Made with <span className="heart">♥</span> by Wild Code School
+          <li className="col-xs-12 col-sm-2 text-white">
+            <a
+              className="wild"
+              href="https://wildcodeschool.fr/lille/"
+              target="_blank"
+            >
+              Made with <span className="heart">♥</span> by Wild Code School
+            </a>
           </li>
         </ul>
       </div>

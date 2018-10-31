@@ -6,11 +6,11 @@ footer {
   color: red;
 }
 
-.madeWithLove {
-  font-size: 0.9em;
-  color: rgb(99, 21, 122);
+.wild {
+  color: white;
 }
 
-.text-white {
-  color: rgb(99, 21, 122);
+.wild:hover {
+  text-decoration: none;
+  color: white;
 }
