@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
+import Homepage from "./Components/Homepage";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Candydex from "./Components/Candydex";
 import Profile from "./Components/Profile";
 import Gamepage from "./Components/Gamepage";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Homepage from "./Components/Homepage";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Homepage />
         <Header />
         <BrowserRouter>
           <Switch>
