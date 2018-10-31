@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "youmurderer";
+  src: url("../assets/fonts/youmurderer-bb.regular.otf");
+}
+
+.gamepage-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../assets/img/corbeau.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+#text-introduction {
+  font-family: "youmurderer";
+  font-size: 46px;
+  color: white;
+  text-shadow: 2px 2px orangered;
+}
+
+.citrouille {
+  width: 200px;
+  height: 150px;
+}
+
+.conteneur {
+  position: relative;
+}
+
+.conteneur iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button-gamepage {
+  margin: 5px;
+  padding: 1px;
+  border: 2px solid #070802;
+  cursor: pointer;
+  width: 80px;
+  border-radius: 10px;
+  background: linear-gradient(0.25turn, #070802, #f69d3c, #070802);
+}
+
+.button-right-gamepage,
+.button-left-gamepage {
+  margin-left: -10px;
+  cursor: pointer;
+  width: 80px;
+  border: 2px solid #070802;
+  border-radius: 10px;
+  background: linear-gradient(0.25turn, #070802, #f69d3c, #070802);
+}
+
+.row {
+  align-items: center;
+}
+
+.embed-responsive {
+  border: 3px solid #2d301f;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media screen and (max-width: 480px) {
+  .buttons {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+}
+
+.messageh1 {
+  color: white;
+  font-family: "youmurderer";
+}

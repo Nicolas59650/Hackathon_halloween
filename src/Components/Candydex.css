@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "youmurderer";
+  src: url("../assets/fonts/youmurderer-bb.regular.otf");
+}
+
+.candybody {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../assets/img/corbeau.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+}
+
+#textcandy {
+  color: white;
+}
+
+.imgcandy {
+  border-radius: 15px;
+}

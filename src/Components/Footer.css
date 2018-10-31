@@ -1,0 +1,16 @@
+footer {
+  background-color: #070802 !important;
+}
+
+.heart {
+  color: red;
+}
+
+.wild {
+  color: white;
+}
+
+.wild:hover {
+  text-decoration: none;
+  color: white;
+}

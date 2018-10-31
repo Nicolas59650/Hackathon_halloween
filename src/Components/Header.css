@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "youmurderer";
+  src: url("../assets/fonts/youmurderer-bb.regular.otf");
+}
+
+#nav-tool {
+  background-color: #070802 !important;
+}
+
+.navigation {
+  color: white !important;
+  font-family: "youmurderer";
+  text-shadow: 1px 1px orange;
+  font-size: 36px;
+}
